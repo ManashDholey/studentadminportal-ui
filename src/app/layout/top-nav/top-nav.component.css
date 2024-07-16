@@ -1,12 +1,12 @@
 .mat-button-base {
     margin-right: 1em;
   }
-  .container{
+  /* .container{
     display: flex;
     margin: 2px;
     padding: 5px;
     gap: 3px; 
-    /* align-items: center; */
+    
     justify-content: center;
     align-content: center;
-  }
+  } */
