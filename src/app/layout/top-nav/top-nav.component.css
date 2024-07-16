@@ -1,4 +1,4 @@
-.mat-button-base {
+.mat-mdc-button-base {
     margin-right: 1em;
   }
   .container{
@@ -7,6 +7,14 @@
     padding: 5px;
     gap: 3px; 
     align-items: center;
-    justify-content: center;
-    align-content: center;
   } 
+  .inline{
+    display: flex;
+    align-items: center;
+    margin: 2px;
+    padding: 5px;
+  }
+  .space{
+    flex: 50%;
+  }
+  

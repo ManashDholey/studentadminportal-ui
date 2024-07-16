@@ -1,8 +1,21 @@
 <mat-toolbar color="primary">
+  <span class="inline">
+    <mat-icon>
+      account_circle
+    </mat-icon>
+    Admin Panel
+  </span>
     <div class="container">
       <a routerLink="/" mat-fab color="accent">
         <mat-icon>home</mat-icon>
       </a>
       <a routerLink="/students" mat-raised-button class="ml-1">Students</a>
+      <div class="space"></div>
+      <a mat-button> Services </a>
+      <a mat-button> Project </a>
+      <a mat-button> About </a>
+      <a mat-button>Contract</a>
+      <a mat-raised-button color="accent">Login</a>
+      <a mat-raised-button color="accent">Signup</a>
     </div>
-  </mat-toolbar>
+</mat-toolbar>
