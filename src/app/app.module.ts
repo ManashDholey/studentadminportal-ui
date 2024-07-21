@@ -6,10 +6,10 @@ import { LayoutModule } from './layout/layout.module';
 import { StudentsModule } from './students/students.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { ClassModuleModule } from './classComponent/class-module/class-module.module';
 @NgModule({
   declarations: [
     AppComponent,
-   // TopNavComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +17,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     LayoutModule,
     StudentsModule,
     BrowserAnimationsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ClassModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

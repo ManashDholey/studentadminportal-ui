@@ -25,16 +25,37 @@
   <mat-drawer #drawer opened="true" mode="side"  position="start">
     <mat-nav-list>
       <mat-list-item>
-        <a routerLink="/" mat-fab color="accent">
-          <mat-icon>home</mat-icon>
-        </a>
+        <button routerLink="" mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+    </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/" mat-button><mat-icon>home</mat-icon> Home</button>
+      </mat-list-item>
+      
+      <mat-list-item><button routerLink="/class" mat-button><mat-icon>list</mat-icon> All Classes</button></mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>fee</mat-icon>Class Fees</button>
       </mat-list-item>
       <mat-list-item>
-        <a routerLink="/students" mat-raised-button class="ml-1">Students</a>
+        <button routerLink="" mat-button><mat-icon>list</mat-icon>All Teachers</button>
       </mat-list-item>
-      <mat-list-item>Class</mat-list-item>
-      <mat-list-item>Class</mat-list-item>
-      <mat-list-item>Class</mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>book</mat-icon>Teachers Subject</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>list</mat-icon>Expense</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="/students" mat-button><mat-icon>list</mat-icon>all Student</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>list</mat-icon>Student Attendance</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>list</mat-icon>Employee Attendance</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="" mat-button><mat-icon>list</mat-icon>Employee Details</button>
+      </mat-list-item>
    </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
