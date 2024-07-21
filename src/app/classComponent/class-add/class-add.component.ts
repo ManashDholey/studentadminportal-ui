@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Class } from 'src/app/models/ui-models/class.model';
+import { ClassService } from '../class.service';
 
 @Component({
   selector: 'app-class-add',
@@ -13,7 +14,8 @@ export class ClassAddComponent implements OnInit{
   classId: string | null | undefined;
   class: Class = {
     id: '',
-    name: ''
+    name: '',
+    status: false
   };
 
   isNewClass = false;
@@ -22,7 +24,8 @@ export class ClassAddComponent implements OnInit{
   constructor(
     private readonly route: ActivatedRoute,
     private snackbar: MatSnackBar,
-    private router: Router) { }
+    private router: Router,
+    private classService :ClassService) { }
     
     
     ngOnInit(): void {
@@ -34,10 +37,19 @@ export class ClassAddComponent implements OnInit{
               // -> new Student Functionality
               this.isNewClass = true;
               this.header = 'Add New Class';
-             
             } else {
               this.isNewClass = false;
               this.header = 'Edit Class';
+              this.classService.getClass(this.classId)
+              .subscribe(
+                (successResponse) => {
+                  this.class = successResponse;
+                },
+                (errorResponse) => {
+                  
+                }
+              );
+
             }
           }
         }) 
@@ -46,15 +58,59 @@ export class ClassAddComponent implements OnInit{
 
   onAdd() :void{
     if (this.classDetailsForm?.form.valid) {
-      
+      this.classService.addClass(this.class)
+      .subscribe(
+        (successResponse) => {
+          this.snackbar.open('Class added successfully', undefined, {
+            duration: 2000
+          });
+
+          setTimeout(() => {
+            this.router.navigateByUrl(`Class/${successResponse.id}`);
+          }, 2000);
+
+        },
+        (errorResponse) => {
+          // Log
+          console.log(errorResponse);
+        }
+      );
     }
   }
 
   onUpdate():void{
-
+    if (this.classDetailsForm?.form.valid) {
+      this.classService.updateClass(this.class.id, this.class)
+        .subscribe(
+          (successResponse) => {
+            // Show a notification
+            this.snackbar.open('Class updated successfully', undefined, {
+              duration: 2000
+            });
+          },
+          (errorResponse) => {
+            // Log it
+            console.log(errorResponse);
+          }
+        );
+    }
   }
   
   onDelete():void{
+    this.classService.deleteClass(this.class.id)
+    .subscribe(
+      (successResponse) => {
+        this.snackbar.open('Class deleted successfully', undefined, {
+          duration: 2000
+        });
 
+        setTimeout(() => {
+          this.router.navigateByUrl('students');
+        }, 2000);
+      },
+      (errorResponse) => {
+        // Log
+      }
+    );
   }
 }
