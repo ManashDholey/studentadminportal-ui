@@ -7,9 +7,12 @@ import { StudentsModule } from './students/students.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ClassModuleModule } from './classComponent/class-module/class-module.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,8 @@ import { ClassModuleModule } from './classComponent/class-module/class-module.mo
     StudentsModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    ClassModuleModule
+    ClassModuleModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
