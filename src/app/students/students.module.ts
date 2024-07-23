@@ -45,9 +45,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
 @NgModule({
   declarations: [ViewStudentComponent,
-    StudentsComponent,],
+    StudentsComponent,
+    StudentAttendanceComponent,],
   imports: [
     HttpClientModule,
     RouterModule,

@@ -8,11 +8,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ClassModuleModule } from './classComponent/class-module/class-module.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { ExpenseModule } from './expense/expense.module';
+import { TeachersModule } from './teachers/teachers.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     BrowserAnimationsModule,
     MatSidenavModule,
     ClassModuleModule,
-    DashboardModule
+    DashboardModule,
+    ExpenseModule,
+    TeachersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

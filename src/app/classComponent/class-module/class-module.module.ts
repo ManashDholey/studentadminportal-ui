@@ -14,11 +14,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { ClassFeesComponent } from '../class-fees/class-fees.component';
 
 
 @NgModule({
   declarations: [ClassListComponent,
-    ClassAddComponent,],
+    ClassAddComponent,ClassFeesComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -35,6 +36,6 @@ import { MatRadioModule } from '@angular/material/radio';
     // MatRadioModule,
   ],
   exports:[ClassListComponent,
-    ClassAddComponent,]
+    ClassAddComponent,ClassFeesComponent]
 })
 export class ClassModuleModule { }
