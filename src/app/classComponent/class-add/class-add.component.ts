@@ -14,7 +14,7 @@ export class ClassAddComponent implements OnInit{
   classId: string | null | undefined;
   class: Class = {
     id: '',
-    name: '',
+    className: '',
     status: false
   };
 

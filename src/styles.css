@@ -42,3 +42,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .searh-input:focus {
   border: 1px solid #AAA;
 }
+.center-contain{
+  justify-content: center;
+  align-items: center;
+}

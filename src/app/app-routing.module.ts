@@ -5,6 +5,8 @@ import { ViewStudentComponent } from './students/view-student/view-student.compo
 import { ClassListComponent } from './classComponent/class-list/class-list.component';
 import { ClassAddComponent } from './classComponent/class-add/class-add.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClassFeesComponent } from './classComponent/class-fees/class-fees.component';
+import { ClassFeeListComponent } from './classComponent/class-fee-list/class-fee-list.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,14 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent
+  },
+  {
+    path:'class-fee/:id',
+    component:ClassFeesComponent
+  },
+  {
+    path:'class-fee-list',
+    component:ClassFeeListComponent
   },
 ];
 
