@@ -105,7 +105,7 @@ export class ClassAddComponent implements OnInit{
         });
 
         setTimeout(() => {
-          this.router.navigateByUrl('students');
+          this.router.navigateByUrl('class');
         }, 2000);
       },
       (errorResponse) => {

@@ -20,11 +20,12 @@
                         <ng-container *ngIf="class$ | async as classList">
                             <mat-form-field appearance="outline">
                                 <mat-label>Select Class</mat-label>
-                            <mat-select>
+                            <mat-select required [(ngModel)]="classFee.ClassDetailId" name="ClassName">
                               <mat-option *ngFor="let item of classList" [value]="item.id">                  
                                 {{item.className}}
                            </mat-option>
                          </mat-select>
+                         <mat-error>Please select a Class Name</mat-error>
                         </mat-form-field>
                         </ng-container>
                       </div>
