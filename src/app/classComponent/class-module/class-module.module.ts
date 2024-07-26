@@ -17,11 +17,13 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ClassFeesComponent } from '../class-fees/class-fees.component';
 import { MatSelectModule } from '@angular/material/select';
 import { ClassFeeListComponent } from '../class-fee-list/class-fee-list.component';
+import { SubjectAddComponent } from '../subject-add/subject-add.component';
+import { SubjectsComponent } from '../subjects/subjects.component';
 
 
 @NgModule({
   declarations: [ClassListComponent,
-    ClassAddComponent,ClassFeesComponent,ClassFeeListComponent,],
+    ClassAddComponent,ClassFeesComponent,ClassFeeListComponent,SubjectAddComponent,SubjectsComponent,],
   imports: [
     CommonModule,
     FormsModule,
@@ -38,6 +40,6 @@ import { ClassFeeListComponent } from '../class-fee-list/class-fee-list.componen
      MatSelectModule
     // MatRadioModule,
   ],
-  exports:[ClassListComponent,ClassAddComponent,ClassFeesComponent,ClassFeeListComponent,]
+  exports:[ClassListComponent,ClassAddComponent,ClassFeesComponent,ClassFeeListComponent,SubjectAddComponent,SubjectsComponent,]
 })
 export class ClassModuleModule { }

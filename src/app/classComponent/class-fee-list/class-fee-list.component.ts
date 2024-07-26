@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -10,7 +10,7 @@ import { ClassFeesService } from '../class-fees.service';
   templateUrl: './class-fee-list.component.html',
   styleUrls: ['./class-fee-list.component.css']
 })
-export class ClassFeeListComponent {
+export class ClassFeeListComponent  implements OnInit {
   allClassFees: ClassFees[] = [];
   displayedColumns: string[] = [
     'className',

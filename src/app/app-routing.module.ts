@@ -17,6 +17,8 @@ import { StudentAttendanceComponent } from './students/student-attendance/studen
 import { StudentAttendanceAddComponent } from './students/student-attendance-add/student-attendance-add.component';
 import { ExpenseComponent } from './expense/expense.component';
 import { ExpenseAddComponent } from './expense/expense-add/expense-add.component';
+import { SubjectsComponent } from './classComponent/subjects/subjects.component';
+import { SubjectAddComponent } from './classComponent/subject-add/subject-add.component';
 
 const routes: Routes = [
   {
@@ -94,6 +96,14 @@ const routes: Routes = [
   {
     path:'expense/:id',
     component:ExpenseAddComponent
+  },
+  {
+    path:'subjects',
+    component:SubjectsComponent
+  },
+  {
+    path:'subjects/:id',
+    component:SubjectAddComponent
   },
 ];
 
