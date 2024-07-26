@@ -46,10 +46,12 @@ import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentAttendanceComponent } from './student-attendance/student-attendance.component';
+import { StudentAttendanceAddComponent } from './student-attendance-add/student-attendance-add.component';
 @NgModule({
   declarations: [ViewStudentComponent,
     StudentsComponent,
-    StudentAttendanceComponent,],
+    StudentAttendanceComponent,
+    StudentAttendanceAddComponent,],
   imports: [
     HttpClientModule,
     RouterModule,

@@ -13,6 +13,10 @@ import { TeachersAttendanceComponent } from './teachers/teachers-attendance/teac
 import { TeachersSubjectComponent } from './teachers/teachers-subject/teachers-subject.component';
 import { TeachersSubjectAddComponent } from './teachers/teachers-subject-add/teachers-subject-add.component';
 import { TeachersAttendanceAddComponent } from './teachers/teachers-attendance-add/teachers-attendance-add.component';
+import { StudentAttendanceComponent } from './students/student-attendance/student-attendance.component';
+import { StudentAttendanceAddComponent } from './students/student-attendance-add/student-attendance-add.component';
+import { ExpenseComponent } from './expense/expense.component';
+import { ExpenseAddComponent } from './expense/expense-add/expense-add.component';
 
 const routes: Routes = [
   {
@@ -28,6 +32,18 @@ const routes: Routes = [
     component: ViewStudentComponent
   },
   {
+    path: 'students/:id',
+    component: ViewStudentComponent
+  },
+  {
+    path: 'student-attendance',
+    component: StudentAttendanceComponent
+  },
+  {
+    path: 'student-attendance/:id',
+    component: StudentAttendanceAddComponent
+  },
+  {
     path:'class',
     component:ClassListComponent
   },
@@ -38,6 +54,10 @@ const routes: Routes = [
   {
     path:'dashboard',
     component:DashboardComponent
+  },
+  {
+    path:'class-fee-list',
+    component:ClassFeeListComponent
   },
   {
     path:'class-fee/:id',
@@ -67,7 +87,14 @@ const routes: Routes = [
     path:'teachers-subject/:id',
     component:TeachersSubjectAddComponent
   },
-  
+  {
+    path:'expense',
+    component:ExpenseComponent
+  },
+  {
+    path:'expense/:id',
+    component:ExpenseAddComponent
+  },
 ];
 
 @NgModule({
