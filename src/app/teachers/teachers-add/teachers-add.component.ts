@@ -57,12 +57,12 @@ export class TeachersAddComponent implements OnInit{
           if (this.teacherId.toLowerCase() === 'Add'.toLowerCase()) {
             // -> new Student Functionality
             this.isNewStudent = true;
-            this.header = 'Add New Student';
+            this.header = 'Add New Teacher';
             this.setImage();
           } else {
             // -> Existing Student Functionality
             this.isNewStudent = false;
-            this.header = 'Edit Student';
+            this.header = 'Edit Teacher';
             this.teacherService.getById(this.teacherId)
               .subscribe(
                 (successResponse) => {
