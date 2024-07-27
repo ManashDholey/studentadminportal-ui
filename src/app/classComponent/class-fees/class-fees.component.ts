@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component,OnInit, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ClassFees } from 'src/app/models/ui-models/class.fee';
 import { Class } from 'src/app/models/ui-models/class.model';
@@ -28,7 +28,7 @@ export class ClassFeesComponent implements OnInit {
     private router: Router,
     private classFeesService:ClassFeesService,
     private snackbar: MatSnackBar,) {}
-
+  
   ngOnInit(): void {
     this.header = 'Add Class Fee';
     this.class$ = this.classService.getAllClass();
@@ -101,7 +101,8 @@ export class ClassFeesComponent implements OnInit {
           });
 
           setTimeout(() => {
-            this.router.navigateByUrl(`class-fee-list/${successResponse.id}`);
+            
+            this.router.navigateByUrl('class-fee-list');
           }, 2000);
         },
         (errorResponse) => {
