@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Gender } from 'src/app/models/ui-models/gender.model';
-import { Teachers } from 'src/app/models/ui-models/teachers.model';
+import { Teacher } from 'src/app/models/ui-models/teacher.model';
 import { TeacherService } from '../teacher.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GenderService } from 'src/app/services/gender.service';
@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class TeachersAddComponent implements OnInit{
   teacherId: string | null | undefined;
-  teacher: Teachers = {
+  teacher: Teacher = {
     id: '',
     firstName: '',
     lastName: '',

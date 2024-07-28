@@ -1,9 +1,9 @@
 import { Class } from "./class.model"
 
 export interface Subject {
-    Id: string,
-    SubjectName:string,
-    ClassDetailId: string,
-    ClassDetail?: Class,
-    Status:boolean
+    id: string,
+    subjectName:string,
+    classDetailId: string,
+    classDetail?: Class,
+    status:boolean
   }

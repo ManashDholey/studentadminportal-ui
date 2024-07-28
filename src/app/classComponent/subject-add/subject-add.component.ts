@@ -19,11 +19,11 @@ export class SubjectAddComponent implements OnInit {
   class$:Observable<Class[]> | undefined; 
   header:string = '';
   subject:Subject = {
-    Id: '',
-    ClassDetailId: '',
-    ClassDetail: undefined,
-    SubjectName: '',
-    Status: false
+    id: '',
+    classDetailId: '',
+    classDetail: undefined,
+    subjectName: '',
+    status: false
   };
   isNewClass = false;
   @ViewChild('subjectForm') subjectForm?: NgForm;
@@ -62,7 +62,7 @@ export class SubjectAddComponent implements OnInit {
 
   onUpdate(): void{
     if (this.subjectForm?.form.valid) {
-      this.subjectService.update(this.subject.Id, this.subject)
+      this.subjectService.update(this.subject.id, this.subject)
         .subscribe(
           (successResponse) => {
             // Show a notification
@@ -78,7 +78,7 @@ export class SubjectAddComponent implements OnInit {
     }
   }
   onDelete(): void {
-    this.subjectService.delete(this.subject.Id)
+    this.subjectService.delete(this.subject.id)
     .subscribe(
       (successResponse) => {
         this.snackbar.open('Class fees deleted successfully', undefined, {
@@ -104,7 +104,7 @@ export class SubjectAddComponent implements OnInit {
           });
 
           setTimeout(() => {
-            this.router.navigateByUrl(`subject/${successResponse.Id}`);
+            this.router.navigateByUrl('subject');
           }, 2000);
         },
         (errorResponse) => {

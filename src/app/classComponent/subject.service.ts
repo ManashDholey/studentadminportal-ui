@@ -16,17 +16,19 @@ export class SubjectService {
   getAll(): Observable<Subject[]> {
     return this.httpClient.get<Subject[]>(this.baseApiUrl + '/Subjects');
   }
-
+  GetSubjectByClassIdAsync(classId: string): Observable<Subject[]> {
+    return this.httpClient.get<Subject[]>(this.baseApiUrl + '/Subjects/GetSubjectByClassIdAsync/' + classId);
+  }
   getById(Id: string): Observable<Subject> {
     return this.httpClient.get<Subject>(this.baseApiUrl + '/Subjects/' + Id)
   }
 
   update(Id: string, subjectRequest: Subject): Observable<Subject> {
     const updateSubjectRequest: Subject = {
-      ClassDetailId: subjectRequest.ClassDetailId,
-      Id: Id,
-      Status: subjectRequest.Status,
-      SubjectName : subjectRequest.SubjectName
+      classDetailId: subjectRequest.classDetailId,
+      id: Id,
+      status: subjectRequest.status,
+      subjectName : subjectRequest.subjectName
     }
 
     return this.httpClient.put<Subject>(this.baseApiUrl + '/Subjects/' + Id, updateSubjectRequest);
@@ -37,12 +39,12 @@ export class SubjectService {
   }
 
   add(subjectRequest: Subject): Observable<Subject> {
-    subjectRequest.Status = true;
+    subjectRequest.status = true;
     const addClassRequest: Subject = {
-      SubjectName: subjectRequest.SubjectName,
-      ClassDetailId:subjectRequest.ClassDetailId ,
-      Id:Guid.create().toString(),
-      Status: subjectRequest.Status
+      subjectName: subjectRequest.subjectName,
+      classDetailId:subjectRequest.classDetailId ,
+      id:Guid.create().toString(),
+      status: subjectRequest.status
     };
     return this.httpClient.post<Subject>(this.baseApiUrl + '/Subjects/Add', addClassRequest);
   }

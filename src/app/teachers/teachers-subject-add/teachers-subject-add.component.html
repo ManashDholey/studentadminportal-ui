@@ -1,1 +1,80 @@
-<p>teachers-subject-add works!</p>
+<div class="page-header">
+    <div class="container">
+      <h1>{{header}}</h1>
+    </div>
+</div>
+<div class="container" style="margin: 4px;">
+    <div class="row top-row">
+      <div class="col-xs-12 row end-xs">
+        <a routerLink="/teachers-subject" color="primary" mat-raised-button>
+          <mat-icon>chevron_left</mat-icon>
+          Go Back
+        </a>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <form #teacherSubjectForm="ngForm">
+                <div class="row center-contain">
+                    <div class="col-xs-12">
+                        <ng-container *ngIf="class$ | async as classList">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Select Class</mat-label>
+                            <mat-select required [(ngModel)]="subjectTeacher.classDetailId" name="ClassName" (selectionChange)="onClassChange($event)">
+                              <mat-option *ngFor="let item of classList" [value]="item.id">                  
+                                {{item.className}}
+                           </mat-option>
+                         </mat-select>
+                         <mat-error>Please select a Class Name</mat-error>
+                        </mat-form-field>
+                        </ng-container>
+                      </div>
+                </div>
+                <div class="row center-contain">
+                    <div class="col-xs-12">
+                        <ng-container *ngIf="subject$ | async as subjectList">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Select Subject</mat-label>
+                            <mat-select required [(ngModel)]="subjectTeacher.subjectId" name="SubjectName">
+                              <mat-option *ngFor="let item of subjectList" [value]="item.id"> 
+                                {{item.subjectName}}
+                           </mat-option>
+                         </mat-select>
+                         <mat-error>Please select a Subject Name</mat-error>
+                        </mat-form-field>
+                        </ng-container>
+                      </div>
+                </div>
+                <div class="row center-contain">
+                    <div class="col-xs-12">
+                        <ng-container *ngIf="teacher$ | async as teacherList">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Select Teacher</mat-label>
+                            <mat-select required [(ngModel)]="subjectTeacher.teacherId" name="teacherName">
+                              <mat-option *ngFor="let item of teacherList" [value]="item.id">                  
+                                {{item.firstName +" "+item.lastName }}
+                           </mat-option>
+                         </mat-select>
+                         <mat-error>Please select a Teacher Name</mat-error>
+                        </mat-form-field>
+                        </ng-container>
+                      </div>
+                </div>
+                <div class="row center-contain" >
+                        <div class="col-xs-8 button-common" *ngIf="!isNewClass" >
+                            <div>
+                                <button mat-raised-button color="primary" (click)="onUpdate()">Save</button>
+                            </div>
+                           <div>
+                                <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+                           </div>
+                        </div>
+                          <div class="col-xs-4" *ngIf="isNewClass">
+                            <button mat-raised-button color="primary" (click)="onAdd()">Add</button>
+                          </div>
+                </div>
+            </form> 
+        </div>
+
+    </div>
+</div>    

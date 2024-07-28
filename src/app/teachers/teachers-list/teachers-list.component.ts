@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Teachers } from 'src/app/models/ui-models/teachers.model';
+import { Teacher } from 'src/app/models/ui-models/teacher.model';
 import { TeacherService } from '../teacher.service';
 
 @Component({
@@ -11,9 +11,9 @@ import { TeacherService } from '../teacher.service';
   styleUrls: ['./teachers-list.component.css']
 })
 export class TeachersListComponent {
-  teachers: Teachers[] = [];
+  teachers: Teacher[] = [];
   displayedColumns: string[] = ['firstName', 'lastName', 'dateOfBirth', 'email', 'mobile', 'gender', 'edit'];
-  dataSource: MatTableDataSource<Teachers> = new MatTableDataSource<Teachers>();
+  dataSource: MatTableDataSource<Teacher> = new MatTableDataSource<Teacher>();
   @ViewChild(MatPaginator) matPaginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
   filterString = '';
@@ -27,7 +27,7 @@ export class TeachersListComponent {
         (successResponse) => {
           this.teachers = successResponse;
           //console.log(this.teachers);
-          this.dataSource = new MatTableDataSource<Teachers>(this.teachers);
+          this.dataSource = new MatTableDataSource<Teacher>(this.teachers);
 
           if (this.matPaginator) {
             this.dataSource.paginator = this.matPaginator;

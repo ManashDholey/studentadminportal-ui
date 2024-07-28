@@ -18,9 +18,9 @@ export class ClassFeesComponent implements OnInit {
   class$:Observable<Class[]> | undefined; 
   header:string = '';
   classFee:ClassFees = {id:'',
-    ClassDetailId:'',
-    ClassDetail:undefined ,
-    FeeAmount:0};
+    classDetailId:'',
+    classDetail:undefined ,
+    feeAmount:0};
   isNewClass = false;
   @ViewChild('classFeeDetailsForm') classFeeDetailsForm?: NgForm;
   constructor(private classService: ClassService, 

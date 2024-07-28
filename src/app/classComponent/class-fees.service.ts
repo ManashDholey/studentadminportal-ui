@@ -22,9 +22,9 @@ export class ClassFeesService {
 
   updateClassFees(classFeeId: string, classRequest: ClassFees): Observable<ClassFees> {
     const updateClassRequest: ClassFees = {
-      ClassDetailId: classRequest.ClassDetailId,
+      classDetailId: classRequest.classDetailId,
       id: classFeeId,
-      FeeAmount: classRequest.FeeAmount
+      feeAmount: classRequest.feeAmount
     }
 
     return this.httpClient.put<ClassFees>(this.baseApiUrl + '/ClassFee/' + classFeeId, updateClassRequest);
@@ -37,9 +37,9 @@ export class ClassFeesService {
   addClassFees(classRequest: ClassFees): Observable<ClassFees> {
     
     const addClassRequest: ClassFees = {
-      ClassDetailId: classRequest.ClassDetailId,
+      classDetailId: classRequest.classDetailId,
       id:Guid.create().toString(),
-      FeeAmount: classRequest.FeeAmount
+      feeAmount: classRequest.feeAmount
     };
     return this.httpClient.post<ClassFees>(this.baseApiUrl + '/ClassFee/Add', addClassRequest);
   }

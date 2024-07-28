@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Teachers } from '../models/ui-models/teachers.model';
+import { Teacher } from '../models/ui-models/teacher.model';
 import { Guid } from 'guid-typescript';
 
 @Injectable({
@@ -13,16 +13,16 @@ export class TeacherService {
   private baseApiUrl:string = environment.apiUrl;
   constructor(private httpClient: HttpClient) { }
 
-  getAll(): Observable<Teachers[]> {
-    return this.httpClient.get<Teachers[]>(this.baseApiUrl + '/Teachers');
+  getAll(): Observable<Teacher[]> {
+    return this.httpClient.get<Teacher[]>(this.baseApiUrl + '/Teachers');
   }
 
-  getById(Id: string): Observable<Teachers> {
-    return this.httpClient.get<Teachers>(this.baseApiUrl + '/Teachers/' + Id)
+  getById(Id: string): Observable<Teacher> {
+    return this.httpClient.get<Teacher>(this.baseApiUrl + '/Teachers/' + Id)
   }
 
-  update(Id: string, teacherRequest: Teachers): Observable<Teachers> {
-    const updateTeacherRequest: Teachers = {
+  update(Id: string, teacherRequest: Teacher): Observable<Teacher> {
+    const updateTeacherRequest: Teacher = {
       email: teacherRequest.email,
       id: Id,
       address: teacherRequest.address,
@@ -34,16 +34,16 @@ export class TeacherService {
       profileImageUrl:teacherRequest.profileImageUrl
     }
 
-    return this.httpClient.put<Teachers>(this.baseApiUrl + '/Teachers/' + Id, updateTeacherRequest);
+    return this.httpClient.put<Teacher>(this.baseApiUrl + '/Teachers/' + Id, updateTeacherRequest);
   }
 
-  delete(Id: string): Observable<Teachers> {
-    return this.httpClient.delete<Teachers>(this.baseApiUrl + '/Teachers/' + Id);
+  delete(Id: string): Observable<Teacher> {
+    return this.httpClient.delete<Teacher>(this.baseApiUrl + '/Teachers/' + Id);
   }
 
-  add(teacherRequest: Teachers): Observable<Teachers> {
+  add(teacherRequest: Teacher): Observable<Teacher> {
    
-    const addClassRequest: Teachers = {
+    const addClassRequest: Teacher = {
       email: teacherRequest.email,
       id: Guid.create.toString(),
       address: teacherRequest.address,
@@ -54,7 +54,7 @@ export class TeacherService {
       firstName:teacherRequest.firstName,
       profileImageUrl:teacherRequest.profileImageUrl
     };
-    return this.httpClient.post<Teachers>(this.baseApiUrl + '/Teachers/Add', addClassRequest);
+    return this.httpClient.post<Teacher>(this.baseApiUrl + '/Teachers/Add', addClassRequest);
   }
   uploadImage(teacherId: string, file: File): Observable<any> {
     const formData = new FormData();
