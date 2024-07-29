@@ -10,10 +10,23 @@ import { ClassModuleModule } from './classComponent/class-module/class-module.mo
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ExpenseModule } from './expense/expense.module';
 import { TeachersModule } from './teachers/teachers.module';
+import { HomeComponent } from './home/home.component';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ServicesComponent } from './public/services/services.component';
+import { ProjectComponent } from './public/project/project.component';
+import { AboutComponent } from './public/about/about.component';
+import { ContractComponent } from './public/contract/contract.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    ServicesComponent,
+    ProjectComponent,
+    AboutComponent,
+    ContractComponent, 
   ],
   imports: [
     BrowserModule,
@@ -27,7 +40,10 @@ import { TeachersModule } from './teachers/teachers.module';
     ExpenseModule,
     TeachersModule,
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+<ng-container *ngIf="user">
 <mat-toolbar color="primary">
   <mat-toolbar-row>
   <span class="inline">
@@ -21,7 +22,7 @@
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-drawer-container >
+<mat-drawer-container autosize>
   <mat-drawer #drawer opened="true" mode="side"  position="start">
     <mat-nav-list>
       <mat-list-item>
@@ -68,4 +69,40 @@
     </div>
   </mat-drawer-content>
 </mat-drawer-container>
+</ng-container>
+<ng-container>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <span class="inline">
+      <mat-icon>
+        account_circle
+      </mat-icon>
+      Admin Panel
+    </span>
+      <div class="container">
+        <a routerLink="/" mat-fab color="accent">
+          <mat-icon>home</mat-icon>
+        </a>
+        <div class="space"></div>
+        <a mat-button routerLink="/services"> Services </a>
+        <a mat-button routerLink="/project"> Project </a>
+        <a mat-button routerLink="/about"> About </a>
+        <a mat-button routerLink="/contract">Contract</a>
+        <a mat-raised-button color="accent" routerLink="/account/login">Login</a>
+        <a mat-raised-button color="accent" routerLink="/account/register">Signup</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-drawer-container>
+    <mat-drawer #drawer opened="false" mode="side"  position="start">
+      
+    </mat-drawer>
+    <mat-drawer-content>
+      <div style="text-align: center;min-height: 600px;">
+  
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+ </ng-container>
 
