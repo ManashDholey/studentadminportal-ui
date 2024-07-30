@@ -26,9 +26,24 @@
                 </mat-form-field>
                 <div
                     *ngIf="loginFormData.password.invalid && (loginFormData.password.dirty || loginFormData.password.touched)">
-                    <mat-error *ngIf="loginFormData.password.errors?.['required']">This
-                        field is required!</mat-error>
-                    <mat-error *ngIf="loginFormData.password.errors?.['minlength']">12 char at least!</mat-error>
+                    <mat-error *ngIf="password?.hasError('required')">
+                        Password is required
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].minLength">
+                        Password must be at least 6 characters
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasUpperCase">
+                        Password must have at least one uppercase letter
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasLowerCase">
+                        Password must have at least one lowercase letter
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasNumeric">
+                        Password must have at least one number
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasNonAlphanumeric">
+                        Password must have at least one non-alphanumeric character
+                      </mat-error>
                 </div>
             </div>
         </mat-card-content>

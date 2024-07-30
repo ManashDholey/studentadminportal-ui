@@ -10,18 +10,49 @@
                     <mat-label>Enter your display Name</mat-label>
                     <input matInput placeholder="Enter your display Name" formControlName="displayName" />
                 </mat-form-field>
+                <div *ngIf="registerFormData.displayName.invalid && (registerFormData['displayName'].dirty || registerFormData['displayName'].touched)">
+                  
+                    <mat-error *ngIf="registerFormData.displayName.errors?.['required'] ">This
+                        field is required!</mat-error>
+                   </div>
             </div>
             <div>
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your email</mat-label>
                     <input matInput placeholder="aaa@aa.com" formControlName="email" />
                 </mat-form-field>
+                <div *ngIf="registerFormData.email.invalid && (registerFormData['email'].dirty || registerFormData['email'].touched)">
+                <mat-error *ngIf="registerFormData.email.errors?.['email']">This
+                    email is not valid!</mat-error>
+                <mat-error *ngIf="registerFormData.email.errors?.['required'] ">This
+                    field is required!</mat-error>
+               </div>
             </div>
             <div class="mt-3">
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your password</mat-label>
                     <input matInput type="password" formControlName="password" />
                 </mat-form-field>
+                <div *ngIf="registerFormData.password.invalid && (registerFormData.password.dirty || registerFormData.password.touched)">
+                    <mat-error *ngIf="password?.hasError('required')">
+                        Password is required
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].minLength">
+                        Password must be at least 6 characters
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasUpperCase">
+                        Password must have at least one uppercase letter
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasLowerCase">
+                        Password must have at least one lowercase letter
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasNumeric">
+                        Password must have at least one number
+                      </mat-error>
+                      <mat-error *ngIf="password?.hasError('passwordPattern') && !password?.errors?.['passwordPattern'].hasNonAlphanumeric">
+                        Password must have at least one non-alphanumeric character
+                      </mat-error>
+                </div>
             </div>
         </mat-card-content>
         <div class="my-4 d-flex justify-content-center  ">
