@@ -14,7 +14,7 @@ export class TopNavComponent implements OnInit {
 opened:boolean = false; 
 private currentUserSource = new ReplaySubject<User | null>(1);
 currentUser$ = this.currentUserSource.asObservable();
-constructor(accountService:AccountService){
+constructor(public accountService:AccountService){
   this.currentUser$ = accountService.currentUser$;
 }
   ngOnInit(): void {
@@ -33,5 +33,5 @@ constructor(accountService:AccountService){
   }
   console.log(this.opened);
  }
-
+   
 }

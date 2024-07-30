@@ -10,7 +10,7 @@ import { debounceTime, finalize, map, switchMap, take } from 'rxjs';
 })
 export class RegisterComponent {
   errors: string[] | null = null;
-  complexPassword = "(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$";
+  complexPassword = "(?=^.{6,25}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$";
   registerForm = new FormGroup({
     displayName: new FormControl('', [Validators.required]),
     email: new FormControl('',[Validators.required, Validators.email], [this.validateEmailNotTaken()]),

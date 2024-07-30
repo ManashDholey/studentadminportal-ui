@@ -18,6 +18,7 @@ import { ServicesComponent } from './public/services/services.component';
 import { ProjectComponent } from './public/project/project.component';
 import { AboutComponent } from './public/about/about.component';
 import { ContractComponent } from './public/contract/contract.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,9 @@ import { ContractComponent } from './public/contract/contract.component';
     DashboardModule,
     ExpenseModule,
     TeachersModule,
+    ToastrModule.forRoot({
+      positionClass :'toast-bottom-right'
+    })
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

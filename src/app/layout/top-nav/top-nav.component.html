@@ -17,8 +17,14 @@
       <a mat-button> Project </a>
       <a mat-button> About </a>
       <a mat-button>Contract</a>
-      <a mat-raised-button color="accent">Login</a>
-      <a mat-raised-button color="accent">Signup</a>
+      <a mat-button>
+        <strong>Welcome {{user.displayName}}</strong>
+      </a>
+      <!-- <a mat-raised-button color="accent">Login</a>
+      <a mat-raised-button color="accent">Signup</a> -->
+      <a (click)="accountService.logout()"  mat-button>
+         Logout
+    </a>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
@@ -31,7 +37,6 @@
       <mat-list-item>
         <button routerLink="/" mat-button><mat-icon>home</mat-icon> Home</button>
       </mat-list-item>
-      
       <mat-list-item><button routerLink="/class" mat-button><mat-icon>list</mat-icon> All Classes</button></mat-list-item>
       <mat-list-item>
         <button routerLink="/class-fee-list" mat-button><mat-icon>fee</mat-icon>Class Fees</button>
@@ -70,7 +75,7 @@
   </mat-drawer-content>
 </mat-drawer-container>
 </ng-container>
-<ng-container>
+<ng-container *ngIf="!user">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
     <span class="inline">
