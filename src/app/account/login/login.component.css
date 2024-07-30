@@ -6,12 +6,4 @@
     /* justify-content: center; */
     align-content: center;
   }
-  form {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 16px;
-  }
   
-  mat-form-field {
-    width: 100%;
-  }
