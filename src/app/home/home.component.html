@@ -1,1 +1,37 @@
-<p>home works!</p>
+<div class="home-container">
+    <h1>Welcome to the School ERP System</h1>
+    <p>This is the home page of the School ERP system. From here, you can navigate to various modules such as Students, Teachers, Classes, and more.</p>
+    
+    <div class="navigation">
+      <a routerLink="/students" class="nav-link">Students</a>
+      <a routerLink="/teachers" class="nav-link">Teachers</a>
+      <a routerLink="/classes" class="nav-link">Classes</a>
+      <!-- Add more navigation links as needed -->
+    </div>
+  
+    <div class="content">
+      <div class="announcements">
+        <h2>Announcements</h2>
+        <ul>
+          <li *ngFor="let announcement of announcements">{{ announcement }}</li>
+        </ul>
+      </div>
+  
+      <div class="recent-activities">
+        <h2>Recent Activities</h2>
+        <ul>
+          <li *ngFor="let activity of recentActivities">{{ activity }}</li>
+        </ul>
+      </div>
+  
+      <div class="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <ul>
+          <li *ngFor="let event of upcomingEvents">
+            <strong>{{ event.date }}:</strong> {{ event.event }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
