@@ -42,7 +42,6 @@ export class TeachersSubjectAddComponent implements OnInit {
   ngOnInit(): void {
     this.header = 'Add Teacher Subject';
     this.class$ = this.classService.getAllClass();
-    
     this.teacher$ = this.teacherService.getAll();
     this.route.paramMap.subscribe(
       (params) => {
@@ -58,6 +57,8 @@ export class TeachersSubjectAddComponent implements OnInit {
             this.subjectTeacherServices.getById(this.Id).subscribe(
               (successResponse) => {
                 this.subjectTeacher = successResponse;
+                if(this.subjectTeacher.classDetailId != undefined)
+                this.subject$ = this.subjectService.GetSubjectByClassIdAsync(this.subjectTeacher.classDetailId);
               },
               (errorResponse) => {
                 
