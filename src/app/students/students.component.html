@@ -69,7 +69,12 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
       <div>
-      <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" z->
+      <mat-paginator 
+      [length]="totalCount" 
+        [pageSize]="studentParams.pageSize" 
+        [pageSizeOptions]="[5,10,25,100]"
+        (page)="pageEvent = $event; onPaginateChange($event)"
+      [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page" z->
       </mat-paginator>
     </div>
     </div>
