@@ -71,7 +71,7 @@
       </table>
       <div>
       <mat-paginator 
-      [length]="totalCount" 
+        [length]="totalCount" 
         [pageSize]="studentParams.pageSize" 
         [pageSizeOptions]="[5,10,25,100]"
         (page)="pageEvent = $event; onPaginateChange($event)"

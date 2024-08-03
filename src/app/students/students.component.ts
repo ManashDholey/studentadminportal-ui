@@ -4,7 +4,8 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Student } from '../models/ui-models/student.model';
 import { StudentsService } from './students.service';
-import { Sort, StudentParams } from '../models/ui-models/student-params';
+import {  StudentParams } from '../models/ui-models/student-params';
+import { Sort } from '../models/ui-models/sort.model';
 
 
 @Component({
