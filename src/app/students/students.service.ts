@@ -26,7 +26,14 @@ export class StudentsService {
     let params = new HttpParams();
 
     if (this.studentParams.genderId) params = params.append('genderId', this.studentParams.genderId);
-    params = params.append('sort', this.studentParams.sort);
+    if(this.studentParams.sort.active)
+    params = params.append('active', this.studentParams.sort.active);
+    // else
+    // params = params.append('active', 'firstname');
+    if(this.studentParams.sort.direction)
+    params = params.append('direction', this.studentParams.sort.direction);
+    // else
+    // params = params.append('direction', 'asc');
     params = params.append('pageIndex', this.studentParams.pageNumber);
     params = params.append('pageSize', this.studentParams.pageSize);
     if (this.studentParams.search) params = params.append('search', this.studentParams.search);
