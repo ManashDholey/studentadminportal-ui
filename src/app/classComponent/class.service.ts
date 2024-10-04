@@ -39,7 +39,7 @@ export class ClassService {
     params = params.append('pageIndex', this.classParams.pageNumber);
     params = params.append('pageSize', this.classParams.pageSize);
     if (this.classParams.search) params = params.append('search', this.classParams.search);
-    return this.httpClient.get<Pagination<Class[]>>(this.baseApiUrl + '/Class');
+    return this.httpClient.get<Pagination<Class[]>>(this.baseApiUrl + '/Class',{params});
   }
 
   getClass(classId: string): Observable<Class> {

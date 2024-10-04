@@ -20,7 +20,7 @@ export class ClassListComponent implements OnInit {
   @ViewChild(MatPaginator) matPaginator!: MatPaginator;
   @ViewChild(MatSort) matSort!: MatSort;
   filterString = '';
-  classParams: ClassParams = new ClassParams; 
+  classParams: ClassParams = new ClassParams(); 
   totalCount =0;
   pageEvent: PageEvent = new PageEvent();
 constructor(private classService: ClassService){
@@ -87,6 +87,7 @@ sortData(event: any) {
           this.totalCount = response.count;
           this.classParams.pageNumber=response.pageIndex;
           this.classParams.pageSize=response.pageSize;
+          this.classService.setClassParams(this.classParams);
           this.dataSource = new MatTableDataSource<Class>(this.allClass);
           },
         error: error => console.log(error),
