@@ -17,7 +17,8 @@
             <form #classFeeDetailsForm="ngForm">
                 <div class="row center-contain">
                     <div class="col-xs-12">
-                        <ng-container *ngIf="class$ | async as classList">
+                      <div *ngIf="class$">
+                        <ng-container  *ngIf="class$ | async as classList">
                             <mat-form-field appearance="outline">
                                 <mat-label>Select Class</mat-label>
                             <mat-select required [(ngModel)]="classFee.classDetailId" name="ClassName">
@@ -28,6 +29,7 @@
                          <mat-error>Please select a Class Name</mat-error>
                         </mat-form-field>
                         </ng-container>
+                      </div>
                       </div>
                 </div>
                 <div class="row center-contain">

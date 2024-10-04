@@ -15,7 +15,7 @@ export class ClassService {
   constructor(private httpClient: HttpClient) { }
 
   getAllClass(): Observable<Class[]> {
-    return this.httpClient.get<Class[]>(this.baseApiUrl + '/Class');
+    return this.httpClient.get<Class[]>(this.baseApiUrl + '/Class/GetAllClass');
   }
   setClassParams(params: ClassParams) {
     this.classParams = params;

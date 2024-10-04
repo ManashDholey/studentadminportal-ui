@@ -1,4 +1,4 @@
 export const environment = {   
   production: true,
-  apiUrl: 'https://api.yourdomain.com/api'
+  apiUrl: 'https://cors-anywhere.herokuapp.com/http://kumardholey-001-site1.htempurl.com/api'
 };
