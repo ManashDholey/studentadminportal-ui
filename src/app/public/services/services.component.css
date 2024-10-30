@@ -1,0 +1,59 @@
+/* services.component.css */
+.services-page {
+    text-align: center;
+    padding: 30px;
+    background-color: #f3f6f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .services-page h1 {
+    font-size: 2.5em;
+    color: #4a90e2;
+    margin-bottom: 0.5em;
+  }
+  
+  .services-page p {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    color: #555;
+  }
+  
+  .services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .service-icon {
+    font-size: 40px;
+    color: #4a90e2;
+    margin-bottom: 10px;
+  }
+  
+  .service-card h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+  }
+  
+  .service-card p {
+    color: #666;
+    font-size: 1em;
+  }
+  

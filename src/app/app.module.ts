@@ -19,6 +19,7 @@ import { ProjectComponent } from './public/project/project.component';
 import { AboutComponent } from './public/about/about.component';
 import { ContractComponent } from './public/contract/contract.component';
 import { ToastrModule } from 'ngx-toastr';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ToastrModule } from 'ngx-toastr';
     StudentsModule,
     BrowserAnimationsModule,
     MatSidenavModule,
+    MatIconModule,
     ClassModuleModule,
     DashboardModule,
     ExpenseModule,

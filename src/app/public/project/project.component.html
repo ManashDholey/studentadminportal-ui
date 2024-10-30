@@ -1,1 +1,19 @@
-<p>project works!</p>
+<!-- projects.component.html -->
+<div class="projects-page">
+    <h1>Our School Projects</h1>
+    <p>Discover a range of projects that our students are working on or have completed.</p>
+    
+    <div class="projects-container">
+      <div class="project-card" *ngFor="let project of projects">
+        <h2>{{ project.name }}</h2>
+        <p>{{ project.description }}</p>
+        <span class="category">{{ project.category }}</span>
+        <span class="status" [class.completed]="project.status === 'Completed'" 
+                              [class.ongoing]="project.status === 'Ongoing'" 
+                              [class.upcoming]="project.status === 'Upcoming'">
+          {{ project.status }}
+        </span>
+      </div>
+    </div>
+  </div>
+  

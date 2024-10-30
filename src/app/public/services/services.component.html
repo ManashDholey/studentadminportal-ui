@@ -1,1 +1,14 @@
-<p>services works!</p>
+<!-- services.component.html -->
+<div class="services-page">
+    <h1>Our School Services</h1>
+    <p>Explore the range of services we offer to support students in their academic and personal growth.</p>
+    
+    <div class="services-container">
+      <div class="service-card" *ngFor="let service of services">
+        <mat-icon class="service-icon">{{ service.icon }}</mat-icon>
+        <h2>{{ service.name }}</h2>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+  

@@ -1,1 +1,30 @@
-<p>about works!</p>
+<!-- about.component.html -->
+<div class="about-page">
+    <header class="header-section">
+      <h1>About Our School</h1>
+      <p>Welcome to our school! Discover our mission, values, and the people who make our community special.</p>
+    </header>
+    
+    <section class="mission-section">
+      <h2>Our Mission</h2>
+      <p>To provide a supportive and inspiring learning environment where students develop skills, knowledge, and a love for learning that lasts a lifetime.</p>
+    </section>
+  
+    <section class="history-section">
+      <h2>Our History</h2>
+      <p>Founded in 2005, our school has been dedicated to fostering excellence in education. Over the years, we have grown and evolved, but our commitment to our students remains the same.</p>
+    </section>
+  
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-container">
+        <div class="team-card" *ngFor="let member of teamMembers">
+          <img [src]="member.photo" alt="{{ member.name }}" class="team-photo">
+          <h3>{{ member.name }}</h3>
+          <p class="role">{{ member.role }}</p>
+          <p>{{ member.description }}</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  
