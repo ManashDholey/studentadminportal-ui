@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Student Admin Portal
+
+This project is deployed and accessible at the following URL:
+
+[https://studentadminportalui-60eef.web.app/](https://studentadminportalui-60eef.web.app/)
+
+## Getting Started
+
+To view the live application, visit the deployment URL above. The Student Admin Portal provides functionalities such as [list main features, e.g., student management, attendance tracking, etc.].
+
+### Additional Details
+
+For any additional configurations or changes, refer to the deployment section below.
+
