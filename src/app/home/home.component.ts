@@ -23,12 +23,27 @@ export class HomeComponent {
       "Science fair winners awarded."
     ];
 
-    this.upcomingEvents = [
-      { date: '2024-08-15', event: 'Parent-Teacher Meeting' },
-      { date: '2024-09-01', event: 'New Semester Begins' },
-      { date: '2024-12-20', event: 'School Annual Day' }
+    this.upcomingEvents =  this.generateDynamicEvents();
+  }
+  addDays(date:any, days:any) {
+    const newDate = new Date(date);
+    newDate.setDate(newDate.getDate() + days);
+    return newDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+  }
+  addMonths(date:any, months:any) {
+    const newDate = new Date(date);
+    newDate.setMonth(newDate.getMonth() + months);
+    return newDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+  }
+  generateDynamicEvents() {
+    const today = new Date();
+  
+    // Generate events with dynamically set dates
+    return [
+      { date: this.addDays(today, 10), event: 'Parent-Teacher Meeting' },      // 10 days from today
+      { date: this.addMonths(today, 1), event: 'New Semester Begins' },        // 1 month from today
+      { date: this.addMonths(today, 3), event: 'School Annual Day' }           // 3 months from today
     ];
   }
-
   
 }
